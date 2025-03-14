@@ -13,6 +13,8 @@ def signup_view(request):
             user = form.save()
             login(request, user)
             return redirect('recipe_list')  # Redirect to viewing page
+        else:
+            print("signup invallid")
     else:
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
@@ -22,9 +24,15 @@ def login_view(request):
         form = AuthenticationForm(data=request.POST)
         if form.is_valid():
             user = form.get_user()
-            login(request, user)
-            return redirect('recipe_list')
-
+            if user:
+                login(request, user)
+                print("logged in")
+                return redirect('recipe_list')
+            else:
+                print("User not found")
+        else:
+            print("Invalid username or password")
+            print(form.errors)
     else:
         form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
@@ -37,6 +45,7 @@ def logout_view(request):
 @login_required
 def recipe_list(request):
     """ Show all recipes, if none exist, show 'Create a Recipe' button. """
+
     recipes = Recipe.objects.all().order_by('-created_at')
     return render(request, 'list.html', {'recipes': recipes})
 
