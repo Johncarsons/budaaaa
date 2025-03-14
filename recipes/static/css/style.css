@@ -1,0 +1,128 @@
+/* Gradient Background */
+body {
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Centered Form Box */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.login-box {
+    background: white;
+    padding: 20px;
+    width: 350px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Title */
+.login-box h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Login/Signup Toggle Buttons */
+.switch-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.switch-buttons button {
+    width: 48%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.switch-buttons button.active {
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: white;
+    font-weight: bold;
+}
+
+.switch-buttons button:not(.active) {
+    background: #f0f0f0;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Forgot Password Link */
+.forgot-password {
+    display: block;
+    text-align: left;
+    color: #ff758c;
+    font-size: 12px;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(to right, #ff7eb3, #ff758c);
+}
+
+/* Signup Text */
+.signup-text {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.signup-text a {
+    color: #ff758c;
+    text-decoration: none;
+}
+.messages {
+    list-style-type: none;
+    padding: 0;
+}
+
+.messages li {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.messages .success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.messages .error {
+    background-color: #f8d7da;
+    color: #721c24;
+}

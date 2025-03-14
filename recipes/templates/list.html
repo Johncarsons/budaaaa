@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Recipes</h2>
+    {% if recipes %}
+        <div class="row">
+            {% for recipe in recipes %}
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ recipe.meal }}</h5>
+                            <p class="card-text">{{ recipe.recipe }}</p>
+                            <a href="{% url 'recipe_edit' recipe.id %}" class="btn btn-sm btn-warning">Edit</a>
+                            <a href="{% url 'recipe_delete' recipe.id %}" class="btn btn-sm btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No recipes found. <a href="{% url 'recipe_create' %}">Create a Recipe</a></p>
+    {% endif %}
+</div>
+{% endblock %}
